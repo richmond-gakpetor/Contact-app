@@ -1,18 +1,23 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:my_contact_app/home_view.dart';
+import 'package:device_preview/device_preview.dart';
 
 void main() {
-  runApp(const ContactApp());
+  runApp(DevicePreview(
+      enabled: !kReleaseMode, builder: (context) => const ContactApp()));
 }
 
 class ContactApp extends StatelessWidget {
   const ContactApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Contact App',
+      useInheritedMediaQuery: true,
+      builder: DevicePreview.appBuilder,
+      locale: DevicePreview.locale(context),
+      title: 'My Contacts',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

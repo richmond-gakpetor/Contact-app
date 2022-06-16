@@ -2,6 +2,7 @@ import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:my_contact_app/contact_model.dart';
+import 'package:my_contact_app/constants/styles.dart';
 
 class ContactDetailsView extends StatelessWidget {
   const ContactDetailsView({Key? key, required this.contact}) : super(key: key);
@@ -17,10 +18,7 @@ class ContactDetailsView extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
         title: const Text('Contact',
-            style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w600,
-                color: Colors.black)),
+            style: kAppBarTitleStyle,),
         iconTheme: const IconThemeData(
           color: Colors.black,
         ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grouped_list/grouped_list.dart';
 import 'package:my_contact_app/contact_details_view.dart';
 import 'package:my_contact_app/contact_model.dart';
+import 'package:my_contact_app/constants/styles.dart';
 
 class HomeView extends StatelessWidget {
   HomeView({Key? key}) : super(key: key);
@@ -194,11 +195,7 @@ class HomeView extends StatelessWidget {
             centerTitle: false,
             title: const Text(
               'My Contacts',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w600,
-                color: Colors.black,
-              ),
+              style: kAppBarTitleStyle,
             ),
             actions: const [
               Padding(
@@ -249,7 +246,6 @@ class HomeView extends StatelessWidget {
                       onTap: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) {
-
                           return ContactDetailsView(
                             contact: Contact(
                                 name: 'Donna Paulsen',
@@ -269,7 +265,7 @@ class HomeView extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 16, fontWeight: FontWeight.w600),
                       ),
-                      subtitle: const Text('+233 24 623 4178'),
+                      subtitle: const Text('+233 24 253 4178'),
                       trailing: const IconButton(
                           onPressed: null, icon: Icon(Icons.more_horiz)),
                     );
@@ -323,8 +319,7 @@ class HomeView extends StatelessWidget {
                         ),
                         title: Text(
                           '${element['name']}',
-                          style: const TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.w600),
+                          style: kContactTextStyle,
                         ),
                         subtitle: Text('${element['phone']}'),
                         trailing: const IconButton(

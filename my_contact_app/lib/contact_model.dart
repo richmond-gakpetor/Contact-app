@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final contact = contactFromJson(jsonString);
-
 import 'dart:convert';
 
 Contact contactFromJson(String str) => Contact.fromJson(json.decode(str));
